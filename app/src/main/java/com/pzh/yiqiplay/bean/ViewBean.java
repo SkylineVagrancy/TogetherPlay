@@ -8,4 +8,5 @@ public class ViewBean extends BaseBean {
     public String packgeName;
     public String title;
     public String content;
+    private String junp;
 }
