@@ -7,6 +7,7 @@ public class InfoBean {
     private String title;
     private String content;
     private String name;
+    private String junpeng;
     public String getTitle() {
         return title;
     }
