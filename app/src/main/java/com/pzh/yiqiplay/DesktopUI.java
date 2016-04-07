@@ -1,6 +1,6 @@
 package com.pzh.yiqiplay;
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -13,14 +13,14 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.alibaba.fastjson.JSON;
-import com.pzh.yiqiplay.bean.InfoBean;
 import com.pzh.yiqiplay.bean.ViewBean;
 import com.pzh.yiqiplay.common.BaseUI;
 import com.pzh.yiqiplay.config.AppConfig;
 import com.pzh.yiqiplay.control.AllUiAdapter;
+import com.tencent.android.tpush.XGPushManager;
+import com.tencent.bugly.crashreport.BuglyLog;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,44 +35,49 @@ public class DesktopUI extends BaseUI {
     private LinearLayout content;
     private DrawerLayout drawerLayout;
     private ImageView icon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.desktop);
+        XGPushManager.registerPush(getApplicationContext());
         initDisplay();
-        drawerLayout= (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerLayout.setScrimColor(Color.argb(0x99, 0x00, 0x00, 0x00));
 //        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-        demoList= (ListView) findViewById(R.id.left_drawer);
-        icon= (ImageView) findViewById(R.id.user_icon);
+        demoList = (ListView) findViewById(R.id.left_drawer);
+        icon = (ImageView) findViewById(R.id.user_icon);
         icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
-        content= (LinearLayout) findViewById(R.id.content_frame);
+        content = (LinearLayout) findViewById(R.id.content_frame);
         queryData();
     }
 
-    public void initDisplay(){
-        DisplayMetrics metrics=new DisplayMetrics();
+    public void initDisplay() {
+        DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        AppConfig.Src_height=metrics.heightPixels;
-        AppConfig.Src_width=metrics.widthPixels;
-        AppConfig.density=metrics.densityDpi;
+        AppConfig.Src_height = metrics.heightPixels;
+        AppConfig.Src_width = metrics.widthPixels;
+        AppConfig.density = metrics.densityDpi;
     }
-    public void queryData(){
-        BmobQuery query=new BmobQuery("ViewList");
+
+    public void queryData() {
+        BmobQuery query = new BmobQuery("ViewList");
         query.findObjects(this, new FindCallback() {
             @Override
             public void onSuccess(JSONArray jsonArray) {
-                Log.d("TAG",jsonArray.toString());
-                viewLists=JSON.parseArray(jsonArray.toString(),ViewBean.class);
-                Log.d("TAG",viewLists.size()+"");
+                Log.d("TAG", jsonArray.toString());
+                viewLists = JSON.parseArray(jsonArray.toString(), ViewBean.class);
+                Log.d("TAG", viewLists.size() + "");
+                BuglyLog.d("TAG", jsonArray.toString());
                 adapter = new AllUiAdapter(context, viewLists);
                 demoList.setAdapter(adapter);
             }
+
             @Override
             public void onFailure(int i, String s) {
 
