@@ -25,6 +25,14 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BATTERY_STATS" />
 
+
+    <!--获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!--允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+
     <application
         android:name=".common.MyApplication"
         android:allowBackup="true"
@@ -107,6 +115,8 @@
         <activity android:name=".ui.EmotionUI" />
         <activity android:name=".ui.PhoneBook" />
         <activity android:name=".ui.ContactUI" />
+        <activity android:name=".ui.TextToSpeechUI" />
+        <activity android:name=".ui.WeatherUI" />
     </application>
 
 </manifest>

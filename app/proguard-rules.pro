@@ -21,3 +21,4 @@
 -keep public class * extends android.content.BroadcastReceiver
 -keep class com.tencent.android.tpush.**  {* ;}
 -keep class com.tencent.mid.**  {* ;}
+-keep class com.iflytek.**{*;}
