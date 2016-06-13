@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:horizontalGap="5px"
+    android:keyHeight="80dp"
+    android:keyWidth="420%"
+    android:verticalGap="5px">
+    <Row>
+        <Key
+            android:codes="0"
+            android:keyLabel="0" />
+        <Key
+            android:codes="1"
+            android:keyLabel="1" />
+        <Key
+            android:codes="2"
+            android:keyLabel="2" />
+        <Key
+            android:codes="3"
+            android:keyLabel="3" />
+        <Key
+            android:codes="4"
+            android:keyLabel="4" />
+        <Key
+            android:codes="-3"
+            android:isRepeatable="true"
+            android:keyEdgeFlags="right"
+            android:keyLabel="重新开始" />
+
+    </Row>
+    <Row>
+
+        <Key
+            android:codes="5"
+            android:keyLabel="5" />
+        <Key
+            android:codes="6"
+            android:keyLabel="6" />
+        <Key
+            android:codes="7"
+            android:keyLabel="7" />
+        <Key
+            android:codes="8"
+            android:keyLabel="8" />
+        <Key
+            android:codes="9"
+            android:keyLabel="9" />
+        <Key
+            android:codes="-2"
+            android:isRepeatable="false"
+            android:keyEdgeFlags="right"
+            android:keyLabel="再来一局" />
+
+    </Row>
+</Keyboard>

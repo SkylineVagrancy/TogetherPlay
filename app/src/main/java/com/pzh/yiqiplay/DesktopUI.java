@@ -17,6 +17,7 @@ import com.pzh.yiqiplay.bean.ViewBean;
 import com.pzh.yiqiplay.common.BaseUI;
 import com.pzh.yiqiplay.config.AppConfig;
 import com.pzh.yiqiplay.control.AllUiAdapter;
+import com.pzh.yiqiplay.view.WheelView;
 import com.tencent.android.tpush.XGPushManager;
 import com.tencent.bugly.crashreport.BuglyLog;
 
@@ -36,6 +37,7 @@ public class DesktopUI extends BaseUI {
     private DrawerLayout drawerLayout;
     private ImageView icon;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +56,7 @@ public class DesktopUI extends BaseUI {
             }
         });
         content = (LinearLayout) findViewById(R.id.content_frame);
+
         queryData();
     }
 

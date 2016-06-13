@@ -3,18 +3,19 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-    sourceSets{
-        main{
-            jniLibs.srcDirs=['src/main/jniLibs']
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
         }
     }
 
     defaultConfig {
         applicationId "com.pzh.yiqiplay"
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -22,14 +23,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    testOptions {
+        unitTests.returnDefaultValues = true;
+    }
+
+
 }
 
 dependencies {
-
     compile 'com.tencent.bugly:crashreport:latest.release'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.2.0'
-    compile fileTree(include: ['*.jar'], dir: 'mobAPI/libs')
+    compile fileTree(dir: 'mobAPI/libs', include: ['*.jar'])
     compile 'com.alibaba:fastjson:1.2.7'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+
 }

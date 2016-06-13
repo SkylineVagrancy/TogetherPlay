@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- 【必须】 信鸽SDK所需权限 -->
     <uses-permission android:name="android.permission.RESTART_PACKAGES" />
@@ -32,6 +33,7 @@
     <!--允许程序改变网络连接状态 -->
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
 
     <application
         android:name=".common.MyApplication"
@@ -117,6 +119,26 @@
         <activity android:name=".ui.ContactUI" />
         <activity android:name=".ui.TextToSpeechUI" />
         <activity android:name=".ui.WeatherUI" />
+        <activity android:name=".ui.NotificationUI" />
+        <activity android:name=".ui.CompassUI" />
+        <activity android:name=".ui.WheelUI" />
+
+        <!--<receiver android:name=".control.BootupReceiver">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+        <!--<category android:name="android.intent.category.DEFAULT" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+        <activity android:name=".ui.PickerUI" />
+        <activity
+            android:name=".ui.ShuduUI"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"/>
+        <activity
+            android:name=".ui.DrawUI"
+            android:screenOrientation="portrait"
+            />
+
     </application>
 
 </manifest>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:my="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.pzh.yiqiplay.view.WheelView
+        android:id="@+id/item_pick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        my:textSize="20"
+        my:lineColor="#1ed1d1"
+        my:textHeight="40dp"
+        my:padding="10"
+        my:nomalTextColor="#171718"
+        my:selectTextColor="#0000FF"
+        my:visibleCount="7"
+        android:fillViewport="false">
+    </com.pzh.yiqiplay.view.WheelView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="onClick" />
+
+</LinearLayout>

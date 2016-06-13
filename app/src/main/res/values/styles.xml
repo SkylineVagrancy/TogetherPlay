@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="transparent_activity" >
+    <style name="transparent_activity">
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/transparent_background</item>
         <item name="android:windowIsTranslucent">true</item>
@@ -16,6 +16,11 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
 
+    </style>
+
+    <style name="transparent_dialog" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:background">#88000000</item>
     </style>
 
 </resources>

@@ -4,4 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="transparent_background">#60000000</color>
+    <color name="line_dark">#ffffff</color>
+    <color name="line_light">#6040bfb9</color>
+    <color name="select_background">#ffd700</color>
+    <color name="shudu_background">#ffe6f0ff</color>
+    <color name="shudu_hit">#ffffffff</color>
+    <color name="shudu_light">#64c6d4ef</color>
+    <color name="shudu_dark">#000000</color>
+    <color name="green">#00ff00</color>
+    <color name="yellow">#ff8000</color>
+    <color name="num">#0037ff</color>
 </resources>
